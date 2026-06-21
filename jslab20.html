@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+#box{
+    width:200px;
+    height:100px;
+    background:skyblue;
+    margin:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<button id="toggle">Toggle</button>
+<button id="slideup">Slide Up</button>
+<button id="slidedown">Slide Down</button>
+<button id="css">CSS</button>
+
+<div id="box"></div>
+
+<script>
+
+$("#hide").click(function(){
+    $("#box").hide();
+});
+
+$("#show").click(function(){
+    $("#box").show();
+});
+
+$("#toggle").click(function(){
+    $("#box").toggle();
+});
+
+$("#slideup").click(function(){
+    $("#box").slideUp();
+});
+
+$("#slidedown").click(function(){
+    $("#box").slideDown();
+});
+
+$("#css").click(function(){
+    $("#box").css({
+        "background":"red",
+        "border":"3px solid black"
+    });
+});
+
+</script>
+
+</body>
+</html>

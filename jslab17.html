@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="showInfo()">Show Information</button>
+
+<p id="info"></p>
+
+<script>
+
+function showInfo(){
+
+let text="";
+
+text+="Browser Name: "+navigator.appName+"<br>";
+text+="Browser Version: "+navigator.appVersion+"<br>";
+text+="Platform: "+navigator.platform+"<br>";
+
+navigator.geolocation.getCurrentPosition(function(position){
+
+text+="Latitude: "+position.coords.latitude+"<br>";
+text+="Longitude: "+position.coords.longitude;
+
+document.getElementById("info").innerHTML=text;
+
+});
+}
+</script>
+
+</body>
+</html>

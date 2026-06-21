@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Counter App</h2>
+
+<button onclick="decrease()">-</button>
+
+<span id="count">0</span>
+
+<button onclick="increase()">+</button>
+
+<br><br>
+
+<button onclick="reset()">Reset</button>
+
+<script>
+
+let count = 0;
+
+function increase(){
+    count++;
+    document.getElementById("count").innerHTML = count;
+}
+
+function decrease(){
+    count--;
+    document.getElementById("count").innerHTML = count;
+}
+
+function reset(){
+    count = 0;
+    document.getElementById("count").innerHTML = count;
+}
+
+</script>
+
+</body>
+</html>

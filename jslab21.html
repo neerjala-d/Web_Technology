@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+
+#box{
+    width:100px;
+    height:100px;
+    background:green;
+    position:relative;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<button id="animateBtn">Animate</button>
+
+<div id="box"></div>
+
+<script>
+
+$("#animateBtn").click(function(){
+
+    $("#box").animate({
+        left:"300px",
+        width:"200px"
+    });
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navbar with Dropdown</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        /* Navbar links */
+        .navbar a {
+            float: left;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Dropdown container */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        /* Dropdown button */
+        .dropdown .dropbtn {
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+        }
+
+        /* Dropdown links */
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Hover effects */
+        .navbar a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: #555;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show dropdown */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">Contact</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">Services ▼</button>
+        <div class="dropdown-content">
+            <a href="#">Web Design</a>
+            <a href="#">SEO</a>
+            <a href="#">Marketing</a>
+        </div>
+    </div>
+
+    <a href="#">About</a>
+</div>
+
+</body>
+</html>

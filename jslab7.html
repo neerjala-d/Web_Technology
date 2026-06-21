@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container{
+    display:flex;
+    flex-wrap:wrap;
+}
+.number{
+    width:50px;
+    margin:2px;
+    padding:10px;
+    text-align:center;
+    color:white;
+}
+</style>
+</head>
+<body>
+
+<div class="container" id="container"></div>
+
+<script>
+function isPrime(num){
+    if(num < 2) return false;
+
+    for(let i=2;i<=Math.sqrt(num);i++){
+        if(num%i===0)
+            return false;
+    }
+    return true;
+}
+
+let container=document.getElementById("container");
+
+for(let i=0;i<=100;i++){
+    let div=document.createElement("div");
+    div.className="number";
+    div.textContent=i;
+
+    if(isPrime(i))
+        div.style.backgroundColor="red";
+    else if(i%2===0)
+        div.style.backgroundColor="green";
+    else
+        div.style.backgroundColor="yellow";
+
+    container.appendChild(div);
+}
+</script>
+
+</body>
+</html>

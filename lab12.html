@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Menu</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Links */
+.navbar a {
+    float: left;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Hover effect */
+.navbar a:hover {
+    background-color: #575757;
+}
+
+/* Dropdown */
+.dropdown {
+    float: left;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+}
+
+.dropdown-content a {
+    display: block;
+    color: black;
+}
+
+/* Show dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Menu icon */
+.icon {
+    display: none;
+    float: right;
+    padding: 14px 16px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .navbar a, .dropdown { display: none; }
+    .icon { display: block; }
+}
+
+/* Show menu when active */
+.responsive a, .responsive .dropdown {
+    display: block;
+    float: none;
+    text-align: left;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar" id="menu">
+    <a href="#">Home</a>
+    <a href="#">Contact</a>
+
+    <div class="dropdown">
+        <a href="#">More</a>
+        <div class="dropdown-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+        </div>
+    </div>
+
+    <a class="icon" onclick="toggleMenu()">☰</a>
+</div>
+
+<script>
+function toggleMenu() {
+    var x = document.getElementById("menu");
+    if (x.className === "navbar") {
+        x.className += " responsive";
+    } else {
+        x.className = "navbar";
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+}
+
+form{
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+input, select{
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.error{
+    color: red;
+}
+</style>
+
+<script>
+
+function validateForm(){
+
+    // Getting values
+    let name = document.getElementById("name").value.trim();
+    let address = document.getElementById("address").value.trim();
+    let username = document.getElementById("username").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+    let phone = document.getElementById("phone").value.trim();
+    let course = document.getElementById("course").value;
+
+    // Name Validation
+    if(name == ""){
+        alert("Name cannot be empty");
+        return false;
+    }
+
+    if(/\d/.test(name)){
+        alert("Name should not contain numbers");
+        return false;
+    }
+
+    // Username Validation
+    if(username == ""){
+        alert("Username cannot be empty");
+        return false;
+    }
+
+    if(!/^[A-Za-z0-9_]+$/.test(username)){
+        alert("Username can contain only letters, numbers and underscore");
+        return false;
+    }
+
+    // Address Validation
+    if(address == ""){
+        alert("Address cannot be empty");
+        return false;
+    }
+
+    // Email Validation
+    if(email == ""){
+        alert("Email cannot be empty");
+        return false;
+    }
+
+    if(!email.includes("@")){
+        alert("Email must contain @ symbol");
+        return false;
+    }
+
+    // Password Validation
+    let passwordPattern =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+    if(!passwordPattern.test(password)){
+        alert("Password must contain:\nMinimum 8 characters\nOne uppercase letter\nOne lowercase letter\nOne number\nOne special character");
+        return false;
+    }
+
+    // Phone Validation
+    if(!/^(98|97|96)\d{8}$/.test(phone)){
+        alert("Phone number must start with 98, 97 or 96 and contain 10 digits");
+        return false;
+    }
+
+    // Gender Validation
+    let gender =
+    document.querySelector('input[name="gender"]:checked');
+
+    if(gender == null){
+        alert("Please select gender");
+        return false;
+    }
+
+    // Course Validation
+    if(course == ""){
+        alert("Please select a course");
+        return false;
+    }
+
+    alert("Form Submitted Successfully");
+    return true;
+}
+</script>
+</head>
+
+<body>
+
+<h2 align="center">Student Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+<label>Name:</label>
+<input type="text" id="name">
+
+<label>Address:</label>
+<input type="text" id="address">
+
+<label>Username:</label>
+<input type="text" id="username">
+
+<label>Email:</label>
+<input type="text" id="email">
+
+<label>Password:</label>
+<input type="password" id="password">
+
+<label>Website:</label>
+<input type="url" id="website">
+
+<label>Phone:</label>
+<input type="text" id="phone">
+
+<label>Gender:</label><br>
+
+<input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+<br><br>
+
+<label>Course:</label>
+
+<select id="course">
+    <option value="">Select Course</option>
+    <option>BIM</option>
+    <option>BCA</option>
+    <option>BIT</option>
+    <option>BBS</option>
+</select>
+
+<br><br>
+
+<input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>

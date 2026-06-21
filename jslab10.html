@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="setCookie()">Store Cookie</button>
+<button onclick="getCookie()">Read Cookie</button>
+<button onclick="deleteCookie()">Delete Cookie</button>
+
+<script>
+
+function setCookie(){
+    document.cookie="username=Ram; expires=Fri, 31 Dec 2030 12:00:00 UTC";
+    alert("Cookie Stored");
+}
+
+function getCookie(){
+    alert(document.cookie);
+}
+
+function deleteCookie(){
+    document.cookie="username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    alert("Cookie Deleted");
+}
+
+</script>
+
+</body>
+</html>

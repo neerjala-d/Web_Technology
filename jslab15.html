@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="para">
+This is a sample paragraph.
+</p>
+
+<button onclick="changeBg()">
+Change Background
+</button>
+
+<button onclick="changeParaBg()">
+Change Paragraph Background
+</button>
+
+<button onclick="hidePara()">
+Hide Paragraph
+</button>
+
+<button onclick="showPara()">
+Show Paragraph
+</button>
+
+<button onclick="increaseFont()">
+Increase Font Size
+</button>
+
+<button onclick="decreaseFont()">
+Decrease Font Size
+</button>
+
+<button onclick="resetFont()">
+Reset Font
+</button>
+
+<button onclick="changeTextColor()">
+Change Text Color
+</button>
+
+<script>
+
+let size = 16;
+
+function changeBg(){
+    document.body.style.backgroundColor = "lightblue";
+}
+
+function changeParaBg(){
+    document.getElementById("para").style.backgroundColor = "yellow";
+}
+
+function hidePara(){
+    document.getElementById("para").style.display = "none";
+}
+
+function showPara(){
+    document.getElementById("para").style.display = "block";
+}
+
+function increaseFont(){
+    size += 2;
+    document.getElementById("para").style.fontSize = size + "px";
+}
+
+function decreaseFont(){
+    size -= 2;
+    document.getElementById("para").style.fontSize = size + "px";
+}
+
+function resetFont(){
+    size = 12;
+    document.getElementById("para").style.fontSize = "12px";
+}
+
+function changeTextColor(){
+    document.getElementById("para").style.color = "red";
+}
+
+</script>
+
+</body>
+</html>
